@@ -1,0 +1,36 @@
+{
+  "name": "westore-public-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "deploy": "firebase deploy",
+    "deploy-preview": "firebase hosting:channel:deploy preview1",
+    "bd": "npm run build && npm run deploy",
+    "bd-p": "npm run build && npm run deploy-preview"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "vue": "^2.6.11",
+    "vue-gtag": "^1.16.1",
+    "vue-meta": "^2.4.0",
+    "vue-router": "^3.2.0",
+    "vue-typed-mixins": "^0.2.0",
+    "vuetify": "^2.4.0"
+  },
+  "devDependencies": {
+    "@mdi/font": "^6.5.95",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "prerender-spa-plugin": "^3.2.1",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-prerender-spa": "^1.1.6",
+    "vue-cli-plugin-vuetify": "^2.4.5",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  }
+}

@@ -1,0 +1,245 @@
+.ws-banner {
+  background-size: cover;
+  background-position: center;
+  &.ws-banner-pink {
+    background-image: url("../assets/Pink-Gradient-Plus.jpg");
+  }
+  &.ws-banner-warehouse {
+    // background-image: url("../assets/warehouse/list-your-warehouse.jpg");
+    background-image: url("../assets/warehouse/warehouse-banner.webp");
+  }
+  &.ws-ultra-flex {
+    background-image: url("../assets/Ultra-Flexible-1536x958.jpg.webp");
+  }
+}
+
+.title-glow {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.7);
+  width: 70%;
+  top: 10%;
+  position: absolute;
+  right: 2%;
+  line-height: 1;
+  padding: 9px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px white;
+  border: 1px solid white;
+}
+
+.ws-odd-row {
+  > div:first-child {
+    order: 13 !important;
+    @media (max-width: 767px) {
+      order: -1 !important;
+    }
+  }
+  .title-glow {
+    left: 2%;
+    right: unset;
+  }
+}
+
+/*
+ *  STYLE 6
+ */
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--v-primary-darken2);
+  background-color: var(--v-ws-black-base);
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: var(--v-primary-darken2);
+  background-color: var(--v-ws-black-base);
+}
+
+::-webkit-scrollbar-thumb {
+  // background-color: var(--v-primary-base);
+  background-color: var(--v-ws-black-lighten2);
+  transition: all ease 0.2s;
+  border: 2px solid var(--v-ws-black-base);
+  border-radius: 10px;
+  // background-image: -webkit-linear-gradient(
+  //     45deg,
+  //     var(--v-secondary-base),
+  //     var(--v-primary-base),
+  //     var(--v-secondary-base)
+  // );
+  min-height: 80px;
+  &:hover {
+    background-color: var(--v-ws-black-lighten3);
+  }
+}
+
+section,
+.section {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.hanging-box-background {
+  background: rgba(var(--v-ws-black-base), 0.7);
+  background: rgba(#0c1922, 0.7);
+}
+.hanging-box {
+  @extend .hanging-box-background;
+  padding: 1.2em;
+  position: absolute;
+  top: 0;
+  width: 40%;
+  @media (max-width: 767px) {
+    width: calc(100% - 2.8em);
+  }
+}
+
+.section-md {
+  font-size: 1.2em;
+}
+.section-lg {
+  font-size: 1.5em;
+  @media (max-width: 767px) {
+    font-size: 1.2em;
+  }
+}
+.section-xl {
+  font-size: 1.75em;
+  @media (max-width: 767px) {
+    font-size: 1.5em;
+  }
+}
+// .section-xl {
+//     font-size: 2em;
+// }
+.ws--color-box {
+  border-radius: 20px;
+  padding: 2px !important;
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    var(--v-primary-base),
+    var(--v-secondary-lighten4),
+    var(--v-accent-base)
+  );
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  > div {
+    background: white;
+    margin: 0;
+    border-radius: 19px;
+    padding: 20px !important;
+  }
+}
+
+/* widget: Gradient Button */
+
+#uc_gradient_button_elementor161184 a {
+  display: inline-block;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 5px;
+  background-size: 200% auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(
+    45deg,
+    var(--v-primary-base) 0%,
+    var(--v-accent-base) 51%,
+    var(--v-primary-base) 100%
+  );
+  text-decoration: none;
+  padding: 2px;
+  line-height: 1;
+}
+
+#uc_gradient_button_elementor161184 a > div {
+  background: white;
+  border-radius: Calc(5px - 2px);
+  font-family: "NeueHaasUnicaPro-bold" !important;
+}
+
+#uc_gradient_button_elementor161184 a:hover {
+  background-position: right center;
+}
+
+// OVERRIDES
+.nerrow-lines {
+  line-height: 1.2;
+}
+.theme--light.v-application {
+  color: var(--v-ws-black-base) !important;
+}
+
+.v-app-bar {
+  .v-toolbar__items {
+    > .v-btn.v-btn--active {
+      &::before {
+        opacity: 0;
+      }
+      > span {
+        &:after {
+          position: absolute;
+          height: 2px;
+          content: "";
+          width: 100%;
+          bottom: -4px;
+        }
+      }
+    }
+    > .v-btn.v-btn--active.theme--dark > span {
+      &:after {
+        background-color: white;
+      }
+    }
+    > .v-btn.v-btn--active.theme--light > span {
+      &:after {
+        background-color: var(--v-ws-black-base);
+      }
+    }
+  }
+}
+
+//----------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.tight {
+    line-height: 1 !important;
+  }
+}
+
+// Whatsapp
+
+.ws-whatsapp-card {
+  position: fixed;
+  bottom: Calc(64px + 16px);
+  right: 0;
+  z-index: 10;
+  .ws-whatsapp-card--title {
+    background-color: var(--v-whatsapp-green-base);
+  }
+
+  .ws-whatsapp-card--contact {
+    background-color: #0c192208;
+    border-left: 2px solid var(--v-whatsapp-green-base);
+  }
+}
+
+[id]:before {
+  content: "";
+  display: block;
+  height: 60px; /* fixed header height*/
+  margin: -60px 0 0; /* negative fixed header height */
+}
+
+.whatsapp-green span {
+  color: white;
+}
+
+// subscription styles
+
+

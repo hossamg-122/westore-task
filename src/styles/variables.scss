@@ -1,0 +1,90 @@
+@import "~vuetify/src/styles/styles.sass";
+
+// $border-radius-root: 6px;
+$btn-font-weight: bold;
+/* Start Custom Fonts CSS */
+
+@font-face {
+    font-family: "NeueHaasUnicaPro";
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url("/fonts/NeueHaasUnicaPro-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NeueHaasUnicaPro";
+    font-style: normal;
+    font-weight: bold;
+    font-display: auto;
+    src: url("/fonts/NeueHaasUnicaPro-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NeueHaasUnicaPro";
+    font-style: normal;
+    font-weight: bolder;
+    font-display: auto;
+    src: url("/fonts/NeueHaasUnica-ExtraBold.ttf") format("truetype");
+    font-display: swap;
+}
+
+/* End Custom Fonts CSS */
+
+$font-weights: map-merge(
+    (
+        "thin": "normal",
+        "light": "normal",
+        "regular": "normal",
+        "medium": "normal",
+        "bold": "bold",
+        "bolder": "bolder",
+    ),
+    $font-weights
+);
+
+$body-font-family: "NeueHaasUnicaPro", serif;
+
+$material-dark: map-merge(
+    (
+        "background": #0c1922,
+        "bg-color": #0c1922,
+        "fg-color": #ffffff,
+        "text-color": #ffffff,
+        "text": (
+            "theme": #ffffff,
+        ),
+    ),
+    $material-dark
+);
+$material-light: map-merge(
+    (
+        // "background": #0c1922,
+        // "bg-color": #0c1922,
+        "fg-color": #0c1922,
+        "text-color": #0c1922,
+        "text": (
+            "theme": #0c1922,
+        )
+    ),
+    $material-light
+);
+
+$grid-breakpoints: (
+    // "xs": 0,
+    "sm": 0,
+    "md": 768px,
+    "lg": 1024px - 16px,
+    "xl": 1280px - 16px
+);
+
+@media (min-width: 1264px) {
+    .container {
+        max-width: 1185px;
+    }
+}
+.container--fluid {
+    max-width: 100% !important;
+}
