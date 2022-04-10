@@ -5,10 +5,7 @@
       <v-img
         alt="WeStore"
         class="shrink mr-2 mb-15 mt-5"
-        :src="
-          dark
-            ? require('../assets/WeStore_logo-white.png')
-            : require('../assets/WeStore_logo-black.png')
+        :src="require('../assets/WeStore_logo-black.png')
         "
         transition="scale-transition"
         :width="$vuetify.breakpoint.smAndDown ? 100 : 150"
@@ -19,7 +16,7 @@
       <h3 class="primary--text text-center">No Credit Card required</h3>
 
       <v-row class="my-10" justify="center"  >
-        <v-col class="left-side" cols="11" md="6" :order="$vuetify.breakpoint.smAndDown && '2'" >
+        <v-col class="left-side" cols="11" md="6" :order="$vuetify.breakpoint.smAndDown ? '2':'0'" >
           <v-row class="mb-8">
             <v-col cols="12" offset="9">
               <v-img
@@ -183,8 +180,8 @@
               <v-col cols="12">
                 <v-btn
                   class="primary"
-                  :loading="submitting"
-                  dark
+               
+                
                   block
                   @click="submitForm"
                 >
@@ -209,7 +206,10 @@ export default {
   components: { wsFooter },
   filters: {
     price: (price) => {
-      return price.toFixed(2);
+      if(price){
+ return price.toFixed(2);
+      }
+     
     },
     calcTotal: (price) => {
       const total = price * 1.05;
@@ -227,7 +227,7 @@ export default {
     },
   }),
   mounted() {
-    console.log("this.$vuetify.breakpoint",this.$vuetify.breakpoint)
+    
     const { id } = this.$route.params;
     this.planId = id
     this.plan = localData.subscriptionPlans.find((plan) => plan.id == id);

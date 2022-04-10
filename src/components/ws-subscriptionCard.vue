@@ -67,8 +67,8 @@
       <v-list v-if="plan.title === 'custom'" dense class="transparent" >
         <v-list-item
           class="card__list-item"
-          v-for="benefit in plan.benefits"
-          :key="benefit"
+          v-for="(benefit,index) in plan.benefits"
+          :key="index"
         >
           <v-list-item-icon class="mr-0 my-0">
             <v-icon color="green" small>mdi-check</v-icon>
@@ -79,10 +79,10 @@
         </v-list-item>
       </v-list>
       <v-list v-else subheader class="card__list mb-3">
-        <template v-for="benefit in plan.benefits">
-          <v-list-item :key="benefit.title" class="card__list-item pa-0">
+        <template v-for="(benefit,index) in plan.benefits">
+          <v-list-item :key="index" class="card__list-item pa-0">
             <v-list-item-avatar class="pa-0 ma-0">
-              <v-img class="my-2" contain :src="benefit.icon" height="18" />
+              <v-img class="my-2" contain :src="benefit.icon" height="16" />
             </v-list-item-avatar>
 
             <v-list-item-content class="py-0">
@@ -197,7 +197,6 @@ height: 200px;
       margin: 0;
       
       .card__item-title{
-        margin-inline-start: 5px;
         font-weight: thin;
         font-size: 12px;
         padding: 0;
